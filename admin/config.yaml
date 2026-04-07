@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "src/images/products"
+public_folder: "/images/products"
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "src/_data/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Price (₦)", name: "price", widget: "number", valueType: "int" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Category", name: "category", widget: "select", options: ["ankara","premium-fabrics","laces","brocades","adires","asooke"] }
+      - { label: "Subcategory", name: "subcategory", widget: "string", required: false }
+      - { label: "Colors", name: "colors", widget: "list", default: [] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Size", name: "size", widget: "string", default: "6 yards" }

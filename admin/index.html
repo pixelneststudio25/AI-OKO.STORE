@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ai-oko Fabrics CMS</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <script>
+    DecapCMS.init({
+      config: {
+        backend: {
+          name: "git-gateway",
+          branch: "main"
+        },
+        media_folder: "src/images/products",   // images go here
+        public_folder: "/images/products",
+        collections: [
+          {
+            name: "products",
+            label: "Products",
+            folder: "src/_data/products",      // each product = a Markdown file
+            create: true,
+            slug: "{{slug}}",                  // URL‑friendly name (auto from title)
+            fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Price (₦)", name: "price", widget: "number", valueType: "int" },
+              { label: "Image", name: "image", widget: "image" },
+              {
+                label: "Category",
+                name: "category",
+                widget: "select",
+                options: ["ankara", "premium-fabrics", "laces", "brocades", "adires", "asooke"]
+              },
+              { label: "Subcategory", name: "subcategory", widget: "string", required: false },
+              { label: "Colors", name: "colors", widget: "list", default: [] },
+              { label: "Description", name: "description", widget: "text" },
+              { label: "Size", name: "size", widget: "string", default: "6 yards" },
+              // SKU and ID will be auto‑generated at build time – not stored in CMS
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
