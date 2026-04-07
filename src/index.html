@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai-oko Fabrics | Premium Nigerian Fabrics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7D3CFF;
+            --primary-dark: #5D2BB8;
+            --text: #333333;
+            --text-light: #666666;
+            --background: #FFFFFF;
+            --light-bg: #F8F8F8;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(125, 60, 255, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(125, 60, 255, 0.2);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .logo i {
+                font-size: 18px;
+            }
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-icons a {
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-icons a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories {
+            background: var(--light-bg);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-img {
+            height: 200px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Featured Products */
+        .product-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card {
+            min-width: 300px;
+            margin: 0 15px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 250px;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* About */
+        .about {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            height: 400px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial p {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Care Instructions */
+        .care-instructions {
+            background: var(--light-bg);
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .care-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .care-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .care-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .care-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(125, 60, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #b3b3b3;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 20px 0;
+            text-align: center;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .product-card {
+                min-width: 250px;
+            }
+        }
+        /* Mobile Navbar Height Reduction */
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 0 !important;
+            }
+    
+            .header-container {
+                padding: 0 !important;
+            }
+    
+            .logo img {
+                height: 30px !important; /* Reduced from 35px */
+            }
+    
+            .mobile-menu-btn {
+                font-size: 22px !important; /* Smaller menu icon */
+            }
+    
+            .nav-icons a {
+                font-size: 22px !important; /* Smaller icons */
+                margin-left: 10px !important;
+            }
+    
+            nav {
+                top: 60px !important; /* Adjusted for smaller header */
+                height: calc(100vh - 60px) !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            header {
+                padding: 6px 0 !important;
+            }
+    
+            .logo img {
+                height: 28px !important;
+            }
+    
+            .mobile-menu-btn {
+                font-size: 20px !important;
+            }
+    
+            .nav-icons a {
+                font-size: 20px !important;
+                margin-left: 10px !important;
+            }
+    
+            nav {
+                top: 55px !important;
+                height: calc(100vh - 55px) !important;
+            }
+        }
+
+        /* CSS for top logo version */
+        .hero-top-logo {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(125, 60, 255, 0.2);
+            max-width: 400px;
+        }
+
+        .hero-top-logo .logo-main {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .hero-top-logo .logo-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .hero-top-logo .logo-tagline {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-top-logo .logo-subtagline {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .hero-top-logo {
+                top: 80px;
+                padding: 15px 20px;
+                max-width: 300px;
+            }
+    
+            .hero-top-logo .logo-main {
+                font-size: 2rem;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tshirt"></i>
+                AI-OKO
+            </a>
+           
+            
+           
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+           
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="457986_Fabric_Cloth_1280x720.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+       
+        <div class="hero-content">               
+            <h1>Premium Nigerian Fabrics</h1>
+            <p>Discover our exquisite collection of authentic Nigerian fabrics including Chingavy, Lace, Ankara, and more. Elevate your style with our premium quality textiles.</p>
+            <div class="hero-btns">
+                <a href="store.html" class="btn btn-primary">Shop Now</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+      <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Fabric Categories</h2>
+                <p>Explore our wide range of premium Nigerian fabrics, each with its unique texture, pattern, and cultural significance.</p>
+            </div>
+           
+            <div class="category-grid">
+                <div class="category-card fade-in">
+                    <div class="category-img">
+                        <i class="fas fa-border-style"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Chingavy</h3>
+                        <p>Elegant and versatile fabric with intricate patterns</p>
+                    </div>
+                </div>
+               
+                <div class="category-card fade-in">
+                    <div class="category-img">
+                        <i class="fas fa-lace"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Lace</h3>
+                        <p>Delicate and sophisticated for special occasions</p>
+                    </div>
+                </div>
+               
+                <div class="category-card fade-in">
+                    <div class="category-img">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Ankara</h3>
+                        <p>Vibrant and colorful African wax prints</p>
+                    </div>
+                </div>
+               
+                <div class="category-card fade-in">
+                    <div class="category-img">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Aso Oke</h3>
+                        <p>Traditional handwoven fabric for ceremonial wear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Browse through our handpicked selection of premium fabrics that represent the best of Nigerian textile craftsmanship.</p>
+            </div>
+           
+            <div class="product-slider">
+                <div class="slider-container">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Royal Blue Chingavy</h3>
+                            <p class="product-price">₦15,000</p>
+                            <p>Premium quality chingavy fabric with elegant royal blue patterns.</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">View Details</a>
+                        </div>
+                    </div>
+                   
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Gold Lace Fabric</h3>
+                            <p class="product-price">₦22,000</p>
+                            <p>Luxurious gold lace perfect for weddings and special occasions.</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">View Details</a>
+                        </div>
+                    </div>
+                   
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-vest"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Vibrant Ankara Print</h3>
+                            <p class="product-price">₦8,500</p>
+                            <p>Colorful Ankara print with traditional African motifs.</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">View Details</a>
+                        </div>
+                    </div>
+                   
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-vest-patches"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Handwoven Aso Oke</h3>
+                            <p class="product-price">₦18,000</p>
+                            <p>Authentic handwoven Aso Oke fabric for traditional attire.</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">View Details</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="slider-controls">
+                    <div class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2024, Ai-oko Fabrics has been at the forefront of bringing premium Nigerian textiles to fashion enthusiasts and designers worldwide. </p>
+                    <p>We source our fabrics directly from skilled artisans and reputable manufacturers across Nigeria, ensuring authenticity and supporting local craftsmanship. Each fabric in our collection tells a story of cultural heritage and artistic expression.</p>
+                    <p>At Ai-oko Fabrics, we believe that clothing is more than just fabric - it's a statement of identity, culture, and personal style. That's why we're dedicated to providing exceptional quality textiles that empower our customers to express themselves authentically.</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Get In Touch</a>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-store"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Don't just take our word for it - hear from our satisfied customers who have experienced the quality of Ai-oko Fabrics.</p>
+            </div>
+           
+            <div class="testimonials-container">
+                <div class="testimonial fade-in">
+                    <p>"The quality of the Ankara fabric I purchased exceeded my expectations. The colors were vibrant and the material was durable. I've received countless compliments on the dress I made with it!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AO</div>
+                        <div class="author-info">
+                            <h4>Amaka Okafor</h4>
+                            <p>Fashion Designer, Lagos</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="testimonial fade-in">
+                    <p>"I was looking for authentic Aso Oke for my traditional wedding and Ai-oko Fabrics delivered exactly what I wanted. The customer service was exceptional and the fabric was perfect for my outfit."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CJ</div>
+                        <div class="author-info">
+                            <h4>Chinedu Johnson</h4>
+                            <p>Bride, Abuja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Care Instructions -->
+    <section class="care-instructions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fabric Care Instructions</h2>
+                <p>Proper care ensures your fabrics maintain their beauty and longevity. Follow these guidelines for different fabric types.</p>
+            </div>
+           
+            <div class="care-grid">
+                <div class="care-card fade-in">
+                    <div class="care-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Chingavy Care</h3>
+                    <p>Hand wash in cold water with mild detergent. Avoid wringing and dry flat. Iron on low heat.</p>
+                </div>
+               
+                <div class="care-card fade-in">
+                    <div class="care-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Lace Care</h3>
+                    <p>Dry clean recommended. If hand washing, use gentle cycle and lay flat to dry to maintain shape.</p>
+                </div>
+               
+                <div class="care-card fade-in">
+                    <div class="care-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Ankara Care</h3>
+                    <p>Machine wash in cold water with similar colors. Tumble dry low or line dry. Iron on medium heat.</p>
+                </div>
+               
+                <div class="care-card fade-in">
+                    <div class="care-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Aso Oke Care</h3>
+                    <p>Dry clean only. Store in a cool, dry place away from direct sunlight to prevent fading.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have questions about our fabrics or need assistance with your order? We're here to help!</p>
+            </div>
+           
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>Shop:
+04 New Kuje, Shopping Complex, Kuje, Abuja, Nigeria</p>
+                            </div>
+                        </div>
+                       
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+234 906 0185 654</p>
+                            </div>
+                        </div>
+                       
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>okpedickson@gmail.com</p>
+                            </div>
+                        </div>
+                       
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 5:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ai_oko_enterprises?igsh=dHZtcnVhc3BxY3Rz" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a> -->
+                    </div>
+                </div>
+               
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ai-oko Fabrics</h3>
+                    <p>Your premier destination for authentic Nigerian fabrics. We bring you the finest textiles that celebrate African heritage and craftsmanship.</p>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Fabric Care Guide</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 04 New Kuje, Shopping Complex, Kuje, Abuja, Nigeria</li>
+                        <li><i class="fas fa-phone-alt"></i> +234 906 0185 654</li>
+                        <li><i class="fas fa-envelope"></i> okpedickson@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ai-oko Fabrics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+    // Mobile Menu Toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('nav').classList.toggle('active');
+    });
+
+    // Product Slider with Swipe Functionality
+    const sliderContainer = document.querySelector('.slider-container');
+    const productCards = document.querySelectorAll('.product-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+
+    // Calculate card width
+    const cardWidth = productCards[0].offsetWidth + 30;
+
+    // Initialize slider position
+    function setPositionByIndex() {
+        currentTranslate = currentIndex * -cardWidth;
+        prevTranslate = currentTranslate;
+        sliderContainer.style.transition = 'transform 0.3s ease-out';
+        sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    // Next/Prev button functionality
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < productCards.length - 1) {
+            currentIndex++;
+            setPositionByIndex();
+        }
+    });
+
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            setPositionByIndex();
+        }
+    });
+
+    // Touch events for mobile
+    sliderContainer.addEventListener('touchstart', touchStart);
+    sliderContainer.addEventListener('touchmove', touchMove);
+    sliderContainer.addEventListener('touchend', touchEnd);
+
+    // Mouse events for desktop
+    sliderContainer.addEventListener('mousedown', touchStart);
+    sliderContainer.addEventListener('mousemove', touchMove);
+    sliderContainer.addEventListener('mouseup', touchEnd);
+    sliderContainer.addEventListener('mouseleave', touchEnd);
+
+    function touchStart(event) {
+        if (event.type === 'mousedown') {
+            event.preventDefault();
+            startPos = getPositionX(event);
+        } else {
+            startPos = getPositionX(event.touches[0]);
+        }
+        
+        isDragging = true;
+        animationID = requestAnimationFrame(animation);
+        sliderContainer.style.cursor = 'grabbing';
+        sliderContainer.style.transition = 'none';
+    }
+
+    function touchMove(event) {
+        if (!isDragging) return;
+        
+        let currentPosition;
+        if (event.type === 'mousemove') {
+            currentPosition = getPositionX(event);
+        } else {
+            currentPosition = getPositionX(event.touches[0]);
+        }
+        
+        currentTranslate = prevTranslate + currentPosition - startPos;
+    }
+
+    function touchEnd() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        sliderContainer.style.cursor = 'grab';
+        
+        const movedBy = currentTranslate - prevTranslate;
+        
+        // If drag was significant enough, change slide
+        if (movedBy < -50 && currentIndex < productCards.length - 1) {
+            currentIndex += 1;
+        }
+        
+        if (movedBy > 50 && currentIndex > 0) {
+            currentIndex -= 1;
+        }
+        
+        setPositionByIndex();
+        prevTranslate = currentTranslate;
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    // Fade In Animation on Scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    function checkFade() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('load', checkFade);
+
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+    });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                document.querySelector('nav').classList.remove('active');
+            }
+        });
+    });
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.padding = '10px 0';
+            header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.padding = '20px 0';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+    });
+
+    // Add CSS for touch experience
+    const style = document.createElement('style');
+    style.textContent = `
+        .slider-container {
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .slider-container:active {
+            cursor: grabbing;
+        }
+        
+        .product-card {
+            touch-action: pan-y;
+        }
+        
+        /* Add swipe indicators for mobile */
+        .swipe-hint {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .swipe-hint i {
+            margin-right: 8px;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        
+        @media (max-width: 768px) {
+            .swipe-hint {
+                display: block;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Add swipe hint element
+    const swipeHint = document.createElement('div');
+    swipeHint.className = 'swipe-hint';
+    swipeHint.innerHTML = '<i class="fas fa-arrows-left-right"></i> Swipe to browse products';
+    document.querySelector('.product-slider').appendChild(swipeHint);
+</script>
+</body>
+</html>

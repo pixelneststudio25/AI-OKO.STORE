@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Ai-oko Fabrics | Premium Nigerian Fabrics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tshirt"></i>
+                AI-OKO
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html" class="active">Store</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Store Hero -->
+    <section class="store-hero">
+        <div class="container">
+            <h1>Browse Our Premium Collection</h1>
+            <p>Discover authentic Nigerian fabrics and accessories. Each piece tells a story of culture, quality, and craftsmanship.</p>
+            
+            <!-- Search Bar -->
+            <div class="store-search">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Search fabrics, categories, or products...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+<!-- Store Categories -->
+<section class="store-categories">
+    <div class="container">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="categories-grid">
+            <!-- Ankara Fabrics -->
+            <a href="category.html?cat=ankara" class="category-card">
+                <div class="category-img">
+                    <img src="images/ankaraa.jpg" alt="Ankara Fabrics"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>ANKARA</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Ankara Fabrics</h3>
+                    <p>Vibrant African wax prints in various designs and quality grades</p>
+                    <span class="product-count">18 products</span>
+                </div>
+            </a>
+
+            <!-- Premium Ankara Fabrics -->
+            <a href="category.html?cat=premium-fabrics" class="category-card">
+                <div class="category-img">
+                    <img src="images/ankara.jpg" alt="Premium-Ankara Fabrics"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>ANKARA</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Premium Ankara Fabrics</h3>
+                    <p>Luxury African wax prints crafted for bold, premium style</p>
+                    <span class="product-count">6 products</span>
+                </div>
+            </a>
+
+            <!-- Laces -->
+            <a href="category.html?cat=laces" class="category-card">
+                <div class="category-img">
+                    <img src="images/lace.jpg" alt="Laces"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%235D2BB8%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>LACES</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Laces</h3>
+                    <p>Elegant lace fabrics for special occasions</p>
+                    <span class="product-count">Coming soon</span>
+                </div>
+            </a>
+
+            <!-- Brocades -->
+            <a href="category.html?cat=brocades" class="category-card">
+                <div class="category-img">
+                    <img src="images/brocades.jpg" alt="Brocades"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>BROCADES</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Brocades</h3>
+                    <p>Luxurious brocade fabrics with intricate patterns</p>
+                    <span class="product-count">6 products</span>
+                </div>
+            </a>
+
+            <!-- Adires -->
+            <a href="category.html?cat=adires" class="category-card">
+                <div class="category-img">
+                    <img src="images/adire.jpg" alt="Adires"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%235D2BB8%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>ADIRES</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Adires</h3>
+                    <p>Traditional indigo-dyed fabrics with tie-dye patterns</p>
+                    <span class="product-count">3 products</span>
+                </div>
+            </a>
+
+            <!-- Aso-oke -->
+            <a href="category.html?cat=asooke" class="category-card">
+                <div class="category-img">
+                    <img src="images/aso-oke.jpg" alt="Aso-oke"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>ASO-OKE</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Aso-oke</h3>
+                    <p>Traditional handwoven fabric for ceremonial wear</p>
+                    <span class="product-count">Various designs</span>
+                </div>
+            </a>
+
+            <!-- Cashmere -->
+            <a href="category.html?cat=cashmere" class="category-card">
+                <div class="category-img">
+                    <img src="images/cashmere.jpg" alt="Cashmere"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%235D2BB8%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>CASHMERE</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Cashmere</h3>
+                    <p>Luxurious cashmere fabrics for premium clothing</p>
+                    <span class="product-count">Various designs</span>
+                </div>
+            </a>
+
+            <!-- Damask -->
+            <a href="category.html?cat=damask" class="category-card">
+                <div class="category-img">
+                    <img src="images/damask.jpg" alt="Damask"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>DAMASK</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Damask</h3>
+                    <p>Reversible patterned fabric with intricate designs</p>
+                    <span class="product-count">Various designs</span>
+                </div>
+            </a>
+
+            <!-- Bags -->
+            <a href="category.html?cat=bags" class="category-card">
+                <div class="category-img">
+                    <img src="images/bags.jpg" alt="Bags"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%235D2BB8%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>BAGS</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Bags</h3>
+                    <p>African-inspired bags and accessories</p>
+                    <span class="product-count">Various designs</span>
+                </div>
+            </a>
+
+            <!-- Shoes -->
+            <a href="category.html?cat=shoes" class="category-card">
+                <div class="category-img">
+                    <img src="images/shoes.jpg" alt="Shoes"
+                        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%237D3CFF%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Montserrat%22>SHOES</text></svg>';">
+                </div>
+                <div class="category-info">
+                    <h3>Shoes</h3>
+                    <p>Traditional and contemporary African footwear</p>
+                    <span class="product-count">Various designs</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Popular This Week</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Featured products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ai-oko Fabrics</h3>
+                    <p>Your premier destination for authentic Nigerian fabrics and accessories.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Store Categories</h3>
+                    <ul>
+                        <li><a href="ankara.html">Ankara Fabrics</a></li>
+                        <li><a href="brocades.html">Brocades</a></li>
+                        <li><a href="adires.html">Adires</a></li>
+                        <li><a href="laces.html">Laces</a></li>
+                        <li><a href="asooke.html">Aso-oke</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 04 New Kuje, Shopping Complex, Kuje, Abuja, Nigeria</li>
+                        <li><i class="fas fa-phone-alt"></i> +234 906 0185 654</li>
+                        <li><i class="fas fa-envelope"></i> okpedickson@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ai-oko Fabrics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/cart.js"></script>
+    <script src="js/store.js"></script>
+    <script>
+        // Initialize store
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update cart count
+            updateCartCount();
+            
+            // Load featured products
+            loadFeaturedProducts();
+            
+            // Initialize search
+            initSearch();
+        });
+    </script>
+</body>
+</html>
