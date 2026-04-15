@@ -1511,10 +1511,23 @@
 </script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
+  // Check the URL fragment for an invite token and redirect to the admin page if found
   const currentHash = window.location.hash;
   if (currentHash.includes("_token")) {
     window.location.href = "/admin/" + currentHash;
   }
+
+  // Optional: Redirect user back to the admin panel after login
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </script>
 </body>
 </html>
