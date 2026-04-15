@@ -1509,5 +1509,12 @@
     swipeHint.innerHTML = '<i class="fas fa-arrows-left-right"></i> Swipe to browse products';
     document.querySelector('.product-slider').appendChild(swipeHint);
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  const currentHash = window.location.hash;
+  if (currentHash.includes("_token")) {
+    window.location.href = "/admin/" + currentHash;
+  }
+</script>
 </body>
 </html>
