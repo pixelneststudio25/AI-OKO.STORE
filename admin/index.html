@@ -4,25 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ai-oko Fabrics CMS</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- 1. Load Netlify Identity Widget FIRST -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <!-- 2. Then load Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
+    // 3. Initialize Decap CMS after both scripts are ready
     DecapCMS.init({
       config: {
         backend: {
           name: "git-gateway",
           branch: "main"
         },
-        media_folder: "src/images/products",   // images go here
+        media_folder: "src/images/products",
         public_folder: "/images/products",
         collections: [
           {
             name: "products",
             label: "Products",
-            folder: "src/_data/products",      // each product = a Markdown file
+            folder: "src/_data/products",
             create: true,
-            slug: "{{slug}}",                  // URL‑friendly name (auto from title)
+            slug: "{{slug}}",
             fields: [
               { label: "Name", name: "name", widget: "string" },
               { label: "Price (₦)", name: "price", widget: "number", valueType: "int" },
@@ -36,8 +40,7 @@
               { label: "Subcategory", name: "subcategory", widget: "string", required: false },
               { label: "Colors", name: "colors", widget: "list", default: [] },
               { label: "Description", name: "description", widget: "text" },
-              { label: "Size", name: "size", widget: "string", default: "6 yards" },
-              // SKU and ID will be auto‑generated at build time – not stored in CMS
+              { label: "Size", name: "size", widget: "string", default: "6 yards" }
             ]
           }
         ]
