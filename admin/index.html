@@ -176,8 +176,18 @@
                 options: ["ankara", "premium-fabrics", "laces", "brocades", "adires", "asooke", "bags", "shoes"]
               },
               { label: "Subcategory", name: "subcategory", widget: "string", required: false },
-              { label: "Colors", name: "colors", widget: "list", default: [] },
-              { label: "Description", name: "description", widget: "text" },
+              {
+                label: "Colors",
+                name: "colors",
+                widget: "select",
+                multiple: true,
+                options: [
+                  "red", "blue", "green", "yellow", "black", "white", "purple", "pink",
+                  "orange", "brown", "grey", "gold", "silver", "navy", "maroon",
+                  "teal", "cream", "peach"
+                ]
+              }
+              { label: "Description", name: "description", widget: "text", required: false},
               { label: "Size", name: "size", widget: "string", default: "6 yards" }
             ]
           }
