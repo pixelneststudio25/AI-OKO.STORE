@@ -1,8 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+
 media_folder: "src/images/products"
 public_folder: "/images/products"
+
 collections:
   - name: "products"
     label: "Products"
@@ -13,25 +15,53 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Price (₦)", name: "price", widget: "number", valueType: "int" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Category", name: "category", widget: "select", options: ["ankara","premium-fabrics","laces","brocades","adires","asooke", "bags", "shoes"] }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "ankara"
+          - "premium-fabrics"
+          - "laces"
+          - "brocades"
+          - "adires"
+          - "asooke"
+          - "bags"
+          - "shoes"
       - { label: "Subcategory", name: "subcategory", widget: "string", required: false }
-      - { label: "Colors"
-            name: "colors"
-            widget: "select"
-            multiple: true
-            options:
-              - red
-              - blue
-              - green
-              - yellow
-              - black
-              - white
-              - purple
-              - pink
-              - orange
-              - brown
-              - gold
-              - silver
-          }
+      - label: "Colors"
+        name: "colors"
+        widget: "select"
+        multiple: true
+        options:
+          - "red"
+          - "blue"
+          - "green"
+          - "yellow"
+          - "black"
+          - "white"
+          - "purple"
+          - "pink"
+          - "orange"
+          - "brown"
+          - "gold"
+          - "silver"
+          - "navy"
+          - "maroon"
+          - "teal"
+          - "turquoise"
+          - "violet"
+          - "indigo"
+          - "magenta"
+          - "cyan"
+          - "beige"
+          - "cream"
+          - "khaki"
+          - "olive"
+          - "lime"
+          - "mint"
+          - "lavender"
+          - "coral"
+          - "peach"
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Size", name: "size", widget: "string", default: "6 yards" }
+      
