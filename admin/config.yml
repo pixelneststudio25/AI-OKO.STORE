@@ -62,6 +62,6 @@ collections:
           - "lavender"
           - "coral"
           - "peach"
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Size", name: "size", widget: "string", default: "6 yards" }
       
