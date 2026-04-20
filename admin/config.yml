@@ -8,12 +8,12 @@ collections:
     label: "Products"
     folder: "src/_data/products"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Price (₦)", name: "price", widget: "number", valueType: "int" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Category", name: "category", widget: "select", options: ["ankara","premium-fabrics","laces","brocades","adires","asooke"] }
+      - { label: "Category", name: "category", widget: "select", options: ["ankara","premium-fabrics","laces","brocades","adires","asooke", "bags", "shoes"] }
       - { label: "Subcategory", name: "subcategory", widget: "string", required: false }
       - { label: "Colors", name: "colors", widget: "list", default: [] }
       - { label: "Description", name: "description", widget: "text" }
