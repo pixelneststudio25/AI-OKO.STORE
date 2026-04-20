@@ -2,16 +2,154 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Ai-oko Fabrics CMS</title>
-  <!-- 1. Load Netlify Identity Widget FIRST -->
+
+  <!-- Netlify Identity Widget (must be first) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Optional: community mobile responsiveness helper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hithismani/responsive-decap@main/dist/responsive.css">
+
+  <style>
+    /* ---------- GLOBAL BRAND OVERRIDES ---------- */
+    :root {
+      --accent: #7D3CFF !important;
+      --accent-light: #7D3CFF19 !important;
+      --accent-dark: #5D2BB8 !important;
+      --text-primary: #333333 !important;
+      --text-secondary: #666666 !important;
+      --bg-primary: #FFFFFF !important;
+      --bg-secondary: #F8F8F8 !important;
+      --border-color: #E0E0E0 !important;
+    }
+
+    /* Improve general typography */
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* Sidebar & navigation brand color */
+    .nc-sidebar-nav a.active,
+    .nc-sidebar-nav a:hover,
+    .nc-entry-listing-card-link:hover,
+    .nc-collection-header button {
+      color: #7D3CFF !important;
+    }
+
+    .nc-entry-editor-toolbar button.active,
+    .nc-entry-editor-toolbar button:hover {
+      border-bottom-color: #7D3CFF !important;
+    }
+
+    button.nc-button-primary,
+    .nc-button-primary {
+      background-color: #7D3CFF !important;
+      border-color: #7D3CFF !important;
+    }
+    button.nc-button-primary:hover,
+    .nc-button-primary:hover {
+      background-color: #5D2BB8 !important;
+      border-color: #5D2BB8 !important;
+    }
+
+    /* Custom scrollbar (optional) */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7D3CFF;
+      border-radius: 10px;
+    }
+
+    /* ---------- RESPONSIVE FIXES (768px, 480px, 370px) ---------- */
+    @media (max-width: 768px) {
+      /* Make sidebar more compact */
+      .nc-sidebar {
+        width: 240px !important;
+      }
+      .nc-sidebar-nav-item {
+        padding: 8px 12px !important;
+      }
+      .nc-entry-listing-card {
+        padding: 12px !important;
+      }
+      /* Adjust editor toolbar for tablets */
+      .nc-entry-editor-toolbar {
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Stack elements, reduce font sizes */
+      .nc-collection-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+      }
+      .nc-collection-controls {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+      }
+      .nc-entry-listing-card {
+        flex-direction: column !important;
+      }
+      .nc-entry-listing-card-image {
+        width: 100% !important;
+        height: auto !important;
+      }
+      /* Better touch targets */
+      button, .nc-button, .nc-sidebar-nav-item {
+        font-size: 14px !important;
+        padding: 10px 12px !important;
+      }
+      /* Sidebar toggle for very small screens (if needed) */
+      .nc-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+      }
+      .nc-sidebar.open {
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 370px) {
+      /* Extreme small devices – tighten everything */
+      .nc-entry-editor-title {
+        font-size: 18px !important;
+      }
+      .nc-field-label {
+        font-size: 13px !important;
+      }
+      .nc-widget-string input,
+      .nc-widget-number input,
+      .nc-widget-text textarea {
+        font-size: 14px !important;
+        padding: 8px !important;
+      }
+      /* Hide less important meta info */
+      .nc-entry-listing-card-meta {
+        display: none !important;
+      }
+    }
+
+    /* ---------- MAKE SURE MEDIA FILES ARE VISIBLE ---------- */
+    .nc-media-library-card-image {
+      background-color: #f0f0f0 !important;
+      background-size: cover !important;
+    }
+  </style>
 </head>
 <body>
-  <!-- 2. Then load Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Load Decap CMS (altered version for theming) -->
+  <script src="https://unpkg.com/decap-cms-alter@^3.1.11/dist/decap-cms.js"></script>
   <script>
-    // 3. Initialize Decap CMS after both scripts are ready
     DecapCMS.init({
       config: {
         backend: {
@@ -46,6 +184,14 @@
         ]
       }
     });
+  </script>
+  <script>
+    // Add a simple toggle button for sidebar (optional)
+    const btn = document.createElement('button');
+    btn.innerHTML = '☰';
+    btn.style.cssText = 'position:fixed; bottom:1rem; left:1rem; z-index:999; background:#7D3CFF; color:white; border:none; border-radius:50%; width:48px; height:48px; font-size:24px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.2);';
+    btn.onclick = () => document.querySelector('.nc-sidebar')?.classList.toggle('open');
+    document.body.appendChild(btn);
   </script>
 </body>
 </html>
