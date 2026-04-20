@@ -15,6 +15,23 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Category", name: "category", widget: "select", options: ["ankara","premium-fabrics","laces","brocades","adires","asooke", "bags", "shoes"] }
       - { label: "Subcategory", name: "subcategory", widget: "string", required: false }
-      - { label: "Colors", name: "colors", widget: "list", default: [] }
+      - { label: "Colors"
+            name: "colors"
+            widget: "select"
+            multiple: true
+            options:
+              - red
+              - blue
+              - green
+              - yellow
+              - black
+              - white
+              - purple
+              - pink
+              - orange
+              - brown
+              - gold
+              - silver
+          }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Size", name: "size", widget: "string", default: "6 yards" }
