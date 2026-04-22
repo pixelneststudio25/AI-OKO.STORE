@@ -150,6 +150,33 @@
   <!-- Load Decap CMS (altered version for theming) -->
   <script src="https://unpkg.com/decap-cms-alter@^3.1.11/dist/decap-cms.js"></script>
   <script>
+  // Custom preview template for the Products collection
+  const ProductPreview = ({ entry, widgetFor }) => {
+    const colors = entry.getIn(['data', 'colors']) || [];
+    return html`
+      <div style="padding: 20px; font-family: sans-serif;">
+        <h2>${entry.getIn(['data', 'name'])}</h2>
+        <p><strong>Price:</strong> ₦${entry.getIn(['data', 'price'])}</p>
+        <div><strong>Colors:</strong>
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            ${colors.map(color => `
+              <span style="display: inline-block; background: ${color}; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ccc; text-indent: -9999px;" title="${color}">${color}</span>
+            `).join('')}
+          </div>
+          <div style="margin-top: 5px;">${colors.join(' & ')}</div>
+        </div>
+        ${widgetFor('body')}
+      </div>
+    `;
+  };
+
+  // Register the preview template after DecapCMS is loaded but before init
+  window.DecapCMS = window.DecapCMS || {};
+  window.DecapCMS.registerPreviewTemplate = function(collection, component) {
+    // This will be called by DecapCMS.init
+  };
+</script>
+  <script>
     DecapCMS.init({
       config: {
         backend: {
