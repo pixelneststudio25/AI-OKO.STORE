@@ -150,39 +150,36 @@
   <!-- Load Decap CMS (altered version for theming) -->
   <script src="https://unpkg.com/decap-cms-alter@^3.1.11/dist/decap-cms.js"></script>
   <script>
-  // Custom preview template for the Products collection
-  const ProductPreview = ({ entry, widgetFor }) => {
-    const colors = entry.getIn(['data', 'colors']) || [];
-    return html`
-      <div style="padding: 20px; font-family: sans-serif;">
-        <h2>${entry.getIn(['data', 'name'])}</h2>
-        <p><strong>Price:</strong> ₦${entry.getIn(['data', 'price'])}</p>
-        <div><strong>Colors:</strong>
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            ${colors.map(color => `
-              <span style="display: inline-block; background: ${color}; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ccc; text-indent: -9999px;" title="${color}">${color}</span>
-            `).join('')}
+    // Custom preview template for Products collection
+    // This runs after DecapCMS is loaded, but we need to wait for init to complete
+    const registerPreview = (CMS) => {
+      CMS.registerPreviewTemplate('products', ({ entry, widgetFor }) => {
+        const colors = entry.getIn(['data', 'colors']) || [];
+        const name = entry.getIn(['data', 'name']) || '';
+        const price = entry.getIn(['data', 'price']) || 0;
+        return `
+          <div style="padding: 20px; font-family: 'Montserrat', sans-serif;">
+            <h2 style="color: #7D3CFF;">${name}</h2>
+            <p><strong>Price:</strong> ₦${Number(price).toLocaleString()}</p>
+            <div><strong>Colors:</strong>
+              <div style="display: flex; gap: 8px; margin: 8px 0; flex-wrap: wrap;">
+                ${colors.map(color => `
+                  <span style="display: inline-block; background: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" title="${color}"></span>
+                `).join('')}
+              </div>
+              <div>${colors.join(' & ') || 'No colors selected'}</div>
+            </div>
+            <div><strong>Description:</strong><br>${widgetFor('description') || ''}</div>
+            <div><strong>Size:</strong> ${entry.getIn(['data', 'size']) || '6 yards'}</div>
           </div>
-          <div style="margin-top: 5px;">${colors.join(' & ')}</div>
-        </div>
-        ${widgetFor('body')}
-      </div>
-    `;
-  };
+        `;
+      });
+    };
 
-  // Register the preview template after DecapCMS is loaded but before init
-  window.DecapCMS = window.DecapCMS || {};
-  window.DecapCMS.registerPreviewTemplate = function(collection, component) {
-    // This will be called by DecapCMS.init
-  };
-</script>
-  <script>
+    // Initialize Decap CMS
     DecapCMS.init({
       config: {
-        backend: {
-          name: "git-gateway",
-          branch: "main"
-        },
+        backend: { name: "git-gateway", branch: "main" },
         media_folder: "src/images/products",
         public_folder: "/images/products",
         collections: [
@@ -210,20 +207,23 @@
                 multiple: true,
                 options: [
                   "red", "blue", "green", "yellow", "black", "white", "purple", "pink",
-                  "orange", "brown", "grey", "gold", "silver", "navy", "maroon",
-                  "teal", "cream", "peach"
+                  "orange", "brown", "gold", "silver", "navy", "maroon", "teal", "turquoise",
+                  "violet", "indigo", "magenta", "cyan", "beige", "cream", "khaki", "olive",
+                  "lime", "mint", "lavender", "coral", "peach"
                 ]
               },
-              { label: "Description", name: "description", widget: "text", required: false},
+              { label: "Description", name: "description", widget: "text", required: false },
               { label: "Size", name: "size", widget: "string", default: "6 yards" }
             ]
           }
         ]
       }
+    }).then(() => {
+      // After initialization, register the preview template
+      registerPreview(DecapCMS);
     });
-  </script>
-  <script>
-    // Add a simple toggle button for sidebar (optional)
+
+    // Optional: mobile sidebar toggle button
     const btn = document.createElement('button');
     btn.innerHTML = '☰';
     btn.style.cssText = 'position:fixed; bottom:1rem; left:1rem; z-index:999; background:#7D3CFF; color:white; border:none; border-radius:50%; width:48px; height:48px; font-size:24px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.2);';
