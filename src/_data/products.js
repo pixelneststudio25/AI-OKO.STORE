@@ -2,12 +2,9 @@
 const fs = require("fs");
 const path = require("path");
 
-// Where Decap stores the product markdown files
 const productsDir = path.join(__dirname, "products");
 
-// Helper to read and parse all .md files
 function getAllProducts() {
-  // If the products folder doesn't exist yet, return an empty array
   if (!fs.existsSync(productsDir)) return [];
   
   const files = fs.readdirSync(productsDir).filter(f => f.endsWith(".md"));
@@ -17,28 +14,64 @@ function getAllProducts() {
     const filePath = path.join(productsDir, file);
     const content = fs.readFileSync(filePath, "utf8");
     
-    // Simple front-matter parser (you can use `gray-matter` npm package for a more robust solution)
-    const match = content.match(/^---\n([\s\S]+?)\n---\n([\s\S]*)$/);
+    // Extract front matter (between --- and ---)
+    const match = content.match(/^---\n([\s\S]+?)\n---\n/);
     if (!match) continue;
     
     const frontMatter = match[1];
+    const lines = frontMatter.split("\n");
     const data = {};
-    frontMatter.split("\n").forEach(line => {
-      const [key, ...val] = line.split(":");
-      if (key && val.length) data[key.trim()] = val.join(":").trim();
-    });
+    let currentKey = null;
+    let currentList = [];
+    let inList = false;
     
-    // Convert colors from YAML list (if it's a string like "- red\n- blue")
-    if (typeof data.colors === "string") {
-      data.colors = data.colors.split("\n").map(c => c.replace(/^- /, "").trim());
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i];
+      if (line.trim() === "") continue;
+      
+      // Check for list item (starts with "- ")
+      if (line.trim().startsWith("- ")) {
+        const item = line.trim().substring(2).trim();
+        if (currentKey && inList) {
+          currentList.push(item);
+        }
+        continue;
+      }
+      
+      // If we were collecting a list, save it now
+      if (inList && currentKey) {
+        data[currentKey] = currentList;
+        currentList = [];
+        inList = false;
+        currentKey = null;
+      }
+      
+      // Regular key: value line
+      const colonIndex = line.indexOf(":");
+      if (colonIndex !== -1) {
+        const key = line.substring(0, colonIndex).trim();
+        let value = line.substring(colonIndex + 1).trim();
+        
+        // Check if this key starts a list (value empty, next line has "- ")
+        if (value === "" && i + 1 < lines.length && lines[i+1].trim().startsWith("- ")) {
+          currentKey = key;
+          inList = true;
+          currentList = [];
+        } else {
+          data[key] = value;
+        }
+      }
+    }
+    // Save any remaining list
+    if (inList && currentKey) {
+      data[currentKey] = currentList;
     }
     
-    // Use the filename (without .md) as the product ID
     const id = path.basename(file, ".md");
     
     products.push({
       id: id,
-      sku: "", // We'll generate this later
+      sku: "",
       name: data.name,
       price: parseInt(data.price, 10),
       image: data.image,
@@ -50,10 +83,9 @@ function getAllProducts() {
     });
   }
   
-  // Sort products by ID to have a stable order, then generate SKUs
+  // Generate SKUs
   products.sort((a, b) => a.id.localeCompare(b.id));
   products.forEach((p, idx) => {
-    // Generate SKU: category prefix + 4-digit number
     const catPrefix = p.category.substring(0, 3).toUpperCase();
     p.sku = `${catPrefix}-${String(idx + 1).padStart(4, "0")}`;
   });
