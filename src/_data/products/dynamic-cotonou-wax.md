@@ -6,6 +6,6 @@ category: ankara
 subcategory: Cotonou Wax
 colors:
   - red
-  - purple
+  - pink
 size: 6 yards
 ---
