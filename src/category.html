@@ -243,19 +243,29 @@
                 initLoadMoreButton: function() {
                     const loadMoreBtn = document.getElementById('loadMoreBtn');
                     const loadMoreContainer = document.getElementById('loadMoreContainer');
+                    
                     if (!loadMoreBtn || !loadMoreContainer) return;
-                    loadMoreBtn.addEventListener('click', async () => {
+                    
+                    // Use a regular function (not arrow) so 'this' refers to the button
+                    loadMoreBtn.addEventListener('click', async function() {
                         if (galleryIsLoading) return;
+                        
+                        // 'this' here is the button element
                         this.classList.add('loading');
                         this.innerHTML = '<span class="btn-text">Loading...</span><i class="fas fa-spinner btn-icon"></i>';
                         galleryIsLoading = true;
+                        
                         await new Promise(resolve => setTimeout(resolve, 300));
+                        
                         const hasMore = ColorGallery.loadMoreDesigns();
+                        
                         this.classList.remove('loading');
                         this.innerHTML = '<span class="btn-text">Load More Designs</span><i class="fas fa-plus btn-icon"></i>';
                         galleryIsLoading = false;
+                        
                         if (!hasMore) loadMoreContainer.classList.add('hidden');
                     });
+                    
                     this.updateProductsCount();
                 },
                 loadMoreDesigns: function() {
